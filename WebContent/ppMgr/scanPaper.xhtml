@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Scan the Paper</title>
+</head>
+<h:body>
+	<center><h:head>${paperBean.name}</h:head></center>
+	<br/>
+	<c:if test="${!empty paperBean.qus}">
+		<c:forEach items="${paperBean.qus}" var="p">
+			<tr>
+				<td>${p.no}.</td> <!-- 这里不会设置宽度。 -->
+				<td>${p.content}</td>
+			</tr>
+			<br/>
+			<tr>
+				<td>A.${p.aans}</td>
+				<td>B.${p.bans}</td>
+				<td>C.${p.cans}</td>
+			</tr>	
+			<br/>
+		</c:forEach>
+	<br/>
+	</c:if>
+	<h:form>
+		<h:commandButton value="return" action="paperMgr.xhtml"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

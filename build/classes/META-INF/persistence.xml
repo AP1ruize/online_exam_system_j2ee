@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="testsys" transaction-type="JTA">
+	<!-- name提供创建实体管理工厂时的关键字 -->
+	<!-- <PROVIDER>ORG.ECLIPSE.PERSISTENCE.JPA.PERSISTENCEPROVIDER</PROVIDER> -->
+	<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
+		<class>bean.JpaUser</class><!-- 表示JpaUser是一个实体类 -->
+		<class>bean.JpaQus</class>
+		<class>bean.JpaTest</class>
+		<class>bean.JpaPaper</class>
+	</persistence-unit>
+</persistence>

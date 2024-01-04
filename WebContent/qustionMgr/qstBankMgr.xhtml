@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title> <!-- 题库管理页面 -->
+<h:outputStylesheet library="css" name="table-style.css"  />
+</h:head>
+<h:body>
+<h:form>
+	<table>
+		<tr>
+			<td> <!-- 查询所有题目 -->
+				<h:commandButton value="check" action="#{qusBean.query}"></h:commandButton>
+			</td>
+			<td>
+				<h:commandButton value="add" action="addQus.xhtml"></h:commandButton>
+			</td>
+<!-- 			<td> -->
+<!-- 				<h:commandButton value="edit" action="editQus.xhtml"></h:commandButton> -->
+<!-- 			</td> -->
+		</tr>
+	</table>
+		<!-- 这里存放从数据库中查询到的所有题目并显示在表格中 -->
+		<h:dataTable value="#{qusBean.quss}" var="q"
+			styleClass="question-table" headerClass="question-table-header"
+            rowClasses="question-table-odd-row,question-table-even-row">
+			<h:column>
+				<f:facet name="header">Question No</f:facet>
+				<h:inputText value="#{q.no}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.no}" rendered="#{not q.editable}" />	
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Subject</f:facet>
+				<h:inputText value="#{q.subject}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.subject}" rendered="#{not q.editable}" />	
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Task</f:facet>	
+				<h:inputText value="#{q.content}" size="20" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.content}" rendered="#{not q.editable}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">True Answer</f:facet>	
+				<h:inputText value="#{q.tans}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.tans}" rendered="#{not q.editable}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">A option</f:facet>	
+				<h:inputText value="#{q.aans}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.aans}" rendered="#{not q.editable}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">B option</f:facet>
+				<h:inputText value="#{q.bans}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.bans}" rendered="#{not q.editable}" />	
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">C option</f:facet>
+				<h:inputText value="#{q.cans}" size="10" rendered="#{q.editable}" />
+				<!-- rendered是渲染效果 -->
+                <h:outputText value="#{q.cans}" rendered="#{not q.editable}" />	
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Edit</f:facet>
+				<h:commandLink value="edit" action="#{qusBean.editAction(q)}"></h:commandLink>	
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandLink value="delete" action="#{qusBean.deleteAction(q)}"></h:commandLink>	
+			</h:column>
+		</h:dataTable>
+		<table>
+		<tr>
+			<td><h:commandButton value="save edit" action="#{qusBean.saveEdit}"></h:commandButton>
+		</td>
+		<td><h:commandButton value="return" action="../mgrPage.xhtml"></h:commandButton></td>
+		</tr>
+		</table>
+</h:form>	
+
+
+</h:body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15357881874340" configfile="/TestSys03/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="122" y="1042" id="pf15357882010901" referenceLink="//@navigationRule.0/@fromViewId|" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="1522" id="pf15361549550154" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15373381117600 pf153742127035313" path="userMgr/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/successful.xhtml" x="338" y="2098" id="pf15368523908691" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf153719737777416" path="/success/successful.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="../error.xhtml" x="338" y="1714" id="pf15368524066404" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf153719737777417 pf153742127035313" path="/errors/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addQus.xhtml" x="122" y="178" id="pf15368524295225" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15368524295226" path="/qustionMgr/addQus.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="../success/addQusSuccess.xhtml" x="338" y="178" id="pf15368524295227" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15368524295226" path="/success/addQusSuccess.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="qstBankMgr.xhtml" x="122" y="562" id="pf15369157331546" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15369157331547" path="/qustionMgr/qstBankMgr.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="../errors/.xhtml" x="338" y="562" id="pf15369157331548" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf15369157331547" path="/errors/qusError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addPaper.xhtml" x="338" y="946" id="pf15369351046923" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15369351046924 pf15371559348410" path="/ppMgr/addPaper.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/paperError.xhtml" x="554" y="1714" id="pf15369351046925" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf15369351046924 pf153715852147810" path="/errors/paperError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/addPaperSuc.xhtml" x="554" y="946" id="pf15371559348423" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" inlinks="pf15371559348410" path="/success/addPaperSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="paperMgr.xhtml" x="122" y="2866" id="pf15371559928897" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf15371559928898 pf15372351863751 pf15374169590019" path="/ppMgr/paperMgr.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editPaper.xhtml" x="338" y="2482" id="pf15371559928899" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf153715852147810 pf153715852147811 pf153719643305313" inlinks="pf15371559928898" path="/ppMgr/editPaper.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/editPaperSuc.xhtml" x="554" y="2290" id="pf153715852147812" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" inlinks="pf153715852147811" path="/success/editPaperSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/editPpFailure.xhtml" x="554" y="2674" id="pf153719643305314" referenceLink="//@navigationRule.6/@navigationCase.2/@toViewId|" inlinks="pf153719643305313" path="/errors/editPpFailure.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="122" y="1906" id="pf153719737777418" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf153719737777416 pf153719737777417" path="userMgr/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/error.xhtml" x="122" y="3348" id="pf153719737777419" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" path="/errors/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ppMgr/scanPaper.xhtml" x="338" y="2866" id="pf15372351863754" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" inlinks="pf15372351863751" path="/ppMgr/scanPaper.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addTest.xhtml" x="122" y="3831" id="pf15372352022908" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf15372352682909" path="/testMgr/addTest.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/addTestSuc.xhtml" x="338" y="3831" id="pf153723526829010" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf15372352682909" path="/success/addTestSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="testMgr.xhtml" x="122" y="5131" id="pf15372402502893" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15372402502894 pf15372413572606 pf15372651093920 pf15374152969787 pf153741765493711" path="/testMgr/testMgr.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/editTestError.xhtml" x="338" y="4747" id="pf15372402502895" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf15372402502894" path="/errors/editTestError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="editTest.xhtml" x="338" y="4363" id="pf15372413572607" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf153726577596110" inlinks="pf15372413572606" path="/testMgr/editTest.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="testMgr/scanTest.xhtml" x="338" y="5131" id="pf15372651093924" referenceLink="//@navigationRule.8/@navigationCase.2/@toViewId|" inlinks="pf15372651093920" path="/testMgr/scanTest.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/editTestSuc.xhtml" x="554" y="4363" id="pf153726577596111" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf153726577596110" path="/success/editTestSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="userMgr/homePage.xhtml" x="338" y="1330" id="pf15373381117601" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15373381117600" path="/userMgr/homePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registerExam.xhtml" x="122" y="6475" id="pf15373560917860" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf15373560917861 pf15373560917862" path="/userMgr/registerExam.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/regExamSuc.xhtml" x="338" y="6283" id="pf15373560917865" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf15373560917861" path="/success/regExamSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/regExamError.xhtml" x="338" y="6667" id="pf15373560917866" referenceLink="//@navigationRule.10/@navigationCase.1/@toViewId|" inlinks="pf15373560917862" path="/errors/regExamError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="userScanPaper.xhtml" x="122" y="7627" id="pf153735621911510" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf153735621911511 pf153736435184913 pf153736435184914 pf15374077849110" path="/userMgr/userScanPaper.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/collectQusSuc.xhtml" x="338" y="7435" id="pf153735621911512" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf153735621911511" path="/success/collectQusSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="testing.xhtml" x="338" y="7051" id="pf153736435184915" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf153738090741720" inlinks="pf153736435184913" path="/userMgr/testing.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/testNotBegin.xhtml" x="338" y="7819" id="pf153736435184916" referenceLink="//@navigationRule.11/@navigationCase.2/@toViewId|" inlinks="pf153736435184914" path="/errors/testNotBegin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="testing.xhtml" x="122" y="8299" id="pf153736968604917" referenceLink="//@navigationRule.12/@fromViewId|" path="/userMgr/testing.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/submitTestSuc.xhtml" x="554" y="7051" id="pf153736968604919" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf153738090741720" path="/success/submitTestSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/hasDoneTest.xhtml" x="338" y="8203" id="pf15374077849112" referenceLink="//@navigationRule.11/@navigationCase.3/@toViewId|" inlinks="pf15374077849110" path="/errors/hasDoneTest.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="changeInfo.xhtml" x="122" y="8971" id="pf15374078572518" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf15374078572519 pf153740793628514 pf15374126831270" path="/userMgr/changeInfo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="changePass.xhtml" x="338" y="8971" id="pf153740785725110" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf15374139772942" inlinks="pf15374078572519 pf15374139772943" path="/userMgr/changePass.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/validateError.xhtml" x="338" y="9355" id="pf153740793628615" referenceLink="//@navigationRule.14/@navigationCase.1/@toViewId|" inlinks="pf153740793628514 pf15374139772944" path="/errors/validateError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/changeInfoSuc.xhtml" x="338" y="8587" id="pf15374126831271" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" inlinks="pf15374126831270" path="/success/changeInfoSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="securityCheck.xhtml" x="122" y="9355" id="pf15374139772945" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf15374139772943 pf15374139772944" path="/userMgr/securityCheck.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/changePassSuc.xhtml" x="554" y="8971" id="pf15374139772946" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" inlinks="pf15374139772942" path="/success/changePassSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success/publishSuc.xhtml" x="338" y="5515" id="pf15374152969788" referenceLink="//@navigationRule.8/@navigationCase.3/@toViewId|" inlinks="pf15374152969787" path="/success/publishSuc.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/paperInuseError.xhtml" x="338" y="3250" id="pf153741695900110" referenceLink="//@navigationRule.5/@navigationCase.2/@toViewId|" inlinks="pf15374169590019" path="/errors/paperInuseError.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="errors/deletePaperError.xhtml" x="338" y="5899" id="pf153741765493712" referenceLink="//@navigationRule.8/@navigationCase.4/@toViewId|" inlinks="pf153741765493711" path="/errors/deletePaperError.xhtml"/>
+  <links id="pf15368524295226" target="pf15368524295227" source="pf15368524295225" outcome="success"/>
+  <links id="pf15369157331547" target="pf15369157331548" source="pf15369157331546" outcome="failure"/>
+  <links id="pf15369351046924" target="pf15369351046925" source="pf15369351046923" outcome="failure"/>
+  <links id="pf15371559348410" target="pf15371559348423" source="pf15369351046923" outcome="success"/>
+  <links id="pf15371559928898" target="pf15371559928899" source="pf15371559928897" outcome="success"/>
+  <links id="pf153715852147810" target="pf15369351046925" source="pf15371559928899" outcome="failure"/>
+  <links id="pf153715852147811" target="pf153715852147812" source="pf15371559928899" outcome="success"/>
+  <links id="pf153719643305313" target="pf153719643305314" source="pf15371559928899" outcome="failureStatus"/>
+  <links id="pf153719737777416" target="pf15368523908691" source="pf153719737777418" outcome="success"/>
+  <links id="pf153719737777417" target="pf15368524066404" source="pf153719737777418" outcome="failure"/>
+  <links id="pf15372351863751" target="pf15372351863754" source="pf15371559928897" outcome="scansuc"/>
+  <links id="pf15372352682909" target="pf153723526829010" source="pf15372352022908" outcome="success"/>
+  <links id="pf15372402502894" target="pf15372402502895" source="pf15372402502893" outcome="failureSta"/>
+  <links id="pf15372413572606" target="pf15372413572607" source="pf15372402502893" outcome="success"/>
+  <links id="pf15372651093920" target="pf15372651093924" source="pf15372402502893" outcome="scan"/>
+  <links id="pf153726577596110" target="pf153726577596111" source="pf15372413572607" outcome="success"/>
+  <links id="pf15373381117600" target="pf15373381117601" source="pf15361549550154" outcome="success"/>
+  <links id="pf15373560917861" target="pf15373560917865" source="pf15373560917860" outcome="success"/>
+  <links id="pf15373560917862" target="pf15373560917866" source="pf15373560917860" outcome="failure"/>
+  <links id="pf153735621911511" target="pf153735621911512" source="pf153735621911510" outcome="success"/>
+  <links id="pf153736435184913" target="pf153736435184915" source="pf153735621911510" outcome="yes"/>
+  <links id="pf153736435184914" target="pf153736435184916" source="pf153735621911510" outcome="no"/>
+  <links id="pf153738090741720" target="pf153736968604919" source="pf153736435184915" outcome="success"/>
+  <links id="pf15374077849110" target="pf15374077849112" source="pf153735621911510" outcome="hasdone"/>
+  <links id="pf15374078572519" target="pf153740785725110" source="pf15374078572518" outcome="validateSuc"/>
+  <links id="pf153740793628514" target="pf153740793628615" source="pf15374078572518" outcome="validateFailure"/>
+  <links id="pf15374126831270" target="pf15374126831271" source="pf15374078572518" outcome="success"/>
+  <links id="pf15374139772943" target="pf153740785725110" source="pf15374139772945" outcome="validateSuc"/>
+  <links id="pf15374139772944" target="pf153740793628615" source="pf15374139772945" outcome="validateFailure"/>
+  <links id="pf15374139772942" target="pf15374139772946" source="pf153740785725110" outcome="success"/>
+  <links id="pf15374152969787" target="pf15374152969788" source="pf15372402502893" outcome="successPublish"/>
+  <links id="pf15374169590019" target="pf153741695900110" source="pf15371559928897" outcome="inuse"/>
+  <links id="pf153741765493711" target="pf153741765493712" source="pf15372402502893" outcome="deletePaperError"/>
+  <links id="pf153742127035313" target="pf15368524066404" source="pf15361549550154" outcome="failure"/>
+</pageflow:Pageflow>

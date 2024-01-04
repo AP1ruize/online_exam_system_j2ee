@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Check your score</title>
+</head>
+<h:body>
+	<center>
+		<h:head>Your test record</h:head>
+	</center>
+	<!-- 这里显示考试的名称，得分，排名，报名总人数，提交的日期和时间 -->
+	<h:form>
+	<h:dataTable value="#{userBean.usertest}" var="t"> <!-- 这里是一个gradeBean就可以。 -->
+		<h:column>
+			<f:facet name="header">Test No</f:facet>
+			<h:outputText value="#{t.name}" size="10" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Score</f:facet>
+			<h:outputText value="#{t.score}" size="10" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Rank</f:facet>
+			<h:outputText value="#{t.rank}" size="10" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Total</f:facet>
+			<h:outputText value="#{t.total}" size="10" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Submit time</f:facet>
+			<h:outputText value="#{t.subTime}" size="10" />
+		</h:column>
+	</h:dataTable>
+	<table>
+		<tr>
+			<td><h:commandButton value="check" action="#{userBean.checkScore}"></h:commandButton>
+			</td>
+			<td><h:commandButton value="return" action="homePage.xhtml"></h:commandButton>
+			</td>
+		</tr>
+	</table>
+	</h:form>
+
+</h:body>
+</html>

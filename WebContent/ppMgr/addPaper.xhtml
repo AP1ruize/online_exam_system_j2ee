@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Add new paper</title>
+</head>
+<h:body>
+	<h:form>
+		<table>
+		<tr>
+			<td>Paper Name:</td>
+			<td> <!-- 在发生事件后立即提交表单， -->
+				<h:inputText value="#{paperBean.name}" immediate="true" onchange="this.form.submit();" valueChangeListener="#{paperBean.queryAllSub}"></h:inputText>
+			</td>
+		</tr>
+		<tr>
+			<td>Subject:</td>
+			<td>
+				<h:selectOneMenu value="#{paperBean.subject}"  immediate="true" onchange="this.form.submit();" valueChangeListener="#{paperBean.queryBySub}">
+ 						<f:selectItems value="#{paperBean.itemSubject}"/>
+ 					<!-- 每次提交都获取的是上次的值 -->
+ 				</h:selectOneMenu>
+ 				<!-- 每次查到的结果都是上一次的存储值啊，第一次查询因为subject为空，所以就什么都没查到。 -->
+			</td>
+		</tr>
+		<tr>
+			<td>Choose only 5 questions!!!</td>
+		</tr>
+				<!-- 这里只显示题目编号和题干即可。 -->
+		</table>
+		<!-- 显示的是label，put(label,value) --> 
+		
+				<h:selectManyCheckbox value="#{paperBean.paperids}"> <!-- 使用字符串数组接收。 -->
+        	 		<f:selectItems value="#{paperBean.itemQus}" />
+        	 		<br/>
+      			 </h:selectManyCheckbox>
+		
+		<table>
+			<tr>
+				<td><h:commandButton value="submit" action="#{paperBean.add}"></h:commandButton></td>
+				<td><h:commandButton value="return" action="paperMgr.xhtml"></h:commandButton></td>
+			</tr>
+		</table>
+		
+		
+	</h:form>
+</h:body>
+</html>

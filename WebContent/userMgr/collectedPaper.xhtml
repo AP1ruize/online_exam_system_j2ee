@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Your Question Collection</title>
+</head>
+<h:body>
+	<h:form>
+		<h:commandButton value="check" action="#{userBean.getCollection}"></h:commandButton>
+		<h:dataTable value="#{userBean.qus}" var="q">
+			<h:column>
+				<f:facet name="header">Question No</f:facet>
+				<h:outputText value="#{q.no}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Subject</f:facet>
+				<h:outputText value="#{q.subject}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Question</f:facet>
+				<h:outputText value="#{q.content}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">A Option</f:facet>
+				<h:outputText value="#{q.aans}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">B Option</f:facet>
+				<h:outputText value="#{q.bans}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">C Option</f:facet>
+				<h:outputText value="#{q.cans}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Cancel</f:facet>
+				<h:commandLink value="cancel" action="#{userBean.cancelCollect(q)}"></h:commandLink>
+			</h:column>
+		</h:dataTable>
+
+		<table>
+			<tr>
+				<td><h:commandButton value="return" action="homePage.xhtml"></h:commandButton>
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

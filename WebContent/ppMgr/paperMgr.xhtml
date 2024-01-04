@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Paper Management</title>
+</head>
+<h:body>
+	<h:form>
+		<table>
+			<tr>
+				<td>
+					<!-- 查询所有题目 --> <h:commandButton value="check"
+						action="#{paperBean.queryAllpp}"></h:commandButton>
+				</td>
+				<td><h:commandButton value="add" action="addPaper.xhtml"></h:commandButton>
+				</td>
+			</tr>
+		</table>
+		<h:dataTable value="#{paperBean.allpp}" var="p">
+			<h:column>
+				<f:facet name="header">Question No</f:facet>
+				<h:outputText value="#{p.no}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">PaperName</f:facet>
+				<h:outputText value="#{p.name}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Subject</f:facet>
+				<h:outputText value="#{p.subject}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Status</f:facet>
+				<h:outputText value="#{p.status}" size="5" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">AddTime</f:facet>
+				<h:outputText value="#{p.date}" size="10" />
+			</h:column>
+			<h:column>
+				<!-- 编辑 -->
+				<f:facet name="header">Edit</f:facet>
+
+				<h:commandLink value="edit" action="#{paperBean.editAction}">
+					<f:setPropertyActionListener target="#{paperBean.id}" value="#{p.id}" />
+					</h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandLink value="delete" action="#{paperBean.delete(p)}"></h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Check Questions</f:facet><!--  查看试卷 -->
+				<h:commandButton value="scan" action="#{paperBean.scan(p)}"></h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<h:commandButton value="return" action="../mgrPage.xhtml"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

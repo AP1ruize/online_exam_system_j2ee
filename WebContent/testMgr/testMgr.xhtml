@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:f="http://java.sun.com/jsf/core"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Test Management</title>
+</head>
+<h:body>
+	<h:form>
+		<table>
+			<tr>
+				<td>
+					<!-- 查询所有题目 --> <h:commandButton value="check"
+						action="#{testBean.queryAllTest}"></h:commandButton>
+				</td>
+				<td><h:commandButton value="add" action="addTest.xhtml"></h:commandButton>
+				</td>
+			</tr>
+		</table>
+		<h:dataTable value="#{testBean.alltt}" var="t">
+			<h:column>
+				<f:facet name="header">Test No</f:facet>
+				<h:outputText value="#{t.no}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Test Name</f:facet>
+				<h:outputText value="#{t.name}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Subject</f:facet>
+				<h:outputText value="#{t.subject}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Intro</f:facet>
+				<h:outputText value="#{t.intro}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Deadline</f:facet>
+				<h:outputText value="#{t.deadline}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Total Number of User</f:facet>
+				<h:outputText value="#{t.totalStu}" size="10" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Status</f:facet>
+				<h:outputText value="#{t.status}" size="10" />
+			</h:column>
+			
+			<h:column>
+				<!-- 编辑 -->
+				<f:facet name="header">Edit</f:facet>
+
+				<h:commandLink value="edit" action="#{testBean.editAction}">
+					<f:setPropertyActionListener target="#{testBean.id}" value="#{t.id}" />
+					</h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandLink value="delete" action="#{testBean.delete(t)}"></h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Check Test</f:facet> <!-- 查看试卷 -->
+				<h:commandButton value="scan" action="#{testBean.scan(t)}"></h:commandButton>
+			</h:column>
+			<h:column><!-- 发布试卷，发布试卷之后用户可以报名。 -->
+				<f:facet name="header">Publish</f:facet> <!-- 查看试卷 -->
+				<h:commandButton value="publish" action="#{testBean.publish(t)}"></h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<table>
+			<tr>
+				<td>
+				<h:commandButton value="return" action="../mgrPage.xhtml"></h:commandButton>
+				</td>
+			</tr>
+			</table>
+	</h:form>
+</h:body>
+</html>

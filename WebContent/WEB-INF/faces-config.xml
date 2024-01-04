@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<navigation-rule><!-- 本文件是用来配值导航规则的 -->
+		<display-name>register.xhtml</display-name>
+		<from-view-id>userMgr/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/successful.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/error.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule><!-- 本文件是用来配值导航规则的 -->
+		<display-name>login.xhtml</display-name>
+		<from-view-id>userMgr/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/userMgr/homePage.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/error.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule><!-- 添加成功跳转到成功页面 -->
+		<display-name>addQus.xhtml</display-name>
+		<from-view-id>/qustionMgr/addQus.xhtml</from-view-id>
+		<navigation-case>
+		<!-- 这里是从webContent作为根目录查找的。 -->
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/addQusSuccess.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>qstBankMgr.xhtml</display-name>
+		<from-view-id>/qustionMgr/qstBankMgr.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/qusError.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>addPaper.xhtml</display-name>
+		<from-view-id>/ppMgr/addPaper.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/paperError.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/addPaperSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>paperMgr.xhtml</display-name>
+		<from-view-id>/ppMgr/paperMgr.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/ppMgr/editPaper.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>scansuc</from-outcome>
+			<to-view-id>/ppMgr/scanPaper.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inuse</from-outcome>
+			<to-view-id>/errors/paperInuseError.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failureStatus</from-outcome>
+			<to-view-id>/errors/editPpFailure.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>editPaper.xhtml</display-name>
+		<from-view-id>/ppMgr/editPaper.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/paperError.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/editPaperSuc.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failureStatus</from-outcome>
+			<to-view-id>/errors/editPpFailure.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>addTest.xhtml</display-name>
+		<from-view-id>/testMgr/addTest.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/addTestSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>testMgr.xhtml</display-name>
+		<from-view-id>/testMgr/testMgr.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>failureSta</from-outcome>
+			<to-view-id>/errors/editTestError.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/testMgr/editTest.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>scan</from-outcome>
+			<to-view-id>/testMgr/scanTest.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>successPublish</from-outcome>
+			<to-view-id>/success/publishSuc.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>deletePaperError</from-outcome>
+			<to-view-id>/errors/deletePaperError.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>editTest.xhtml</display-name>
+		<from-view-id>/testMgr/editTest.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/editTestSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>registerExam.xhtml</display-name>
+		<from-view-id>/userMgr/registerExam.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/regExamSuc.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/errors/regExamError.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>userScanPaper.xhtml</display-name>
+		<from-view-id>/userMgr/userScanPaper.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/collectQusSuc.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>yes</from-outcome>
+			<to-view-id>/userMgr/testing.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>no</from-outcome>
+			<to-view-id>/errors/testNotBegin.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>hasdone</from-outcome>
+			<to-view-id>/errors/hasDoneTest.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>testing.xhtml</display-name>
+		<from-view-id>/userMgr/testing.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/success/submitTestSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>changeInfo.xhtml</display-name>
+		<from-view-id>/userMgr/changeInfo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>validateSuc</from-outcome><!--  修改密码 -->
+			<to-view-id>/userMgr/changePass.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>validateFailure</from-outcome><!--  修改密码 -->
+			<to-view-id>/errors/validateError.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>success</from-outcome><!--  修改密码 -->
+			<to-view-id>/success/changeInfoSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>securityCheck.xhtml</display-name>
+		<from-view-id>/userMgr/securityCheck.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>validateSuc</from-outcome><!--  修改密码 -->
+			<to-view-id>/userMgr/changePass.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>validateFailure</from-outcome><!--  修改密码 -->
+			<to-view-id>/errors/validateError.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>changePass.xhtml</display-name>
+		<from-view-id>/userMgr/changePass.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome><!--  修改密码 -->
+			<to-view-id>/success/changePassSuc.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

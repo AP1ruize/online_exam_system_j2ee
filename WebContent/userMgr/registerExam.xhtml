@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Register for exams</title>
+</head>
+<h:body>
+	<h:head>Welcom to regiter for exams!</h:head>
+	<!-- 是不是只能查询到用户没注册过的考试呢? -->
+	<!-- 那么一次只能注册一个考试， 并且进行检查，用户是否已经注册过了当前考试 -->
+	<h:form>
+		<table>
+			<tr>
+				<td>Choose Subject first:</td>
+				<td><h:selectOneMenu value="#{userBean.subject}"
+						onchange="submit()" valueChangeListener="#{userBean.queryTest}">
+						<f:selectItems value="#{userBean.itemSub}" />
+					</h:selectOneMenu></td>
+				<!-- 首先点击按钮查询所有的考试的科目，然后查询当前科目的所有的考试 -->
+				<td><h:commandButton value="check"
+						action="#{userBean.querySub}"></h:commandButton></td>
+			</tr>
+		</table>
+
+		<h:selectOneRadio value="#{userBean.testid}">
+			<!-- 使用字符串数组接收。 -->
+			<f:selectItems value="#{userBean.itemTest}" />
+			<br/>
+		</h:selectOneRadio>
+		<table>
+			<tr>
+			<td>
+				<h:commandButton value="submit" action="#{userBean.registerExam}"></h:commandButton>
+			</td>
+			</tr>
+		</table>
+	</h:form>
+
+
+</h:body>
+</html>

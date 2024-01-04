@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Add Qustions</title>
+</head>
+<h:body>
+	<h:head>Add Qustions</h:head>
+	<h:form>
+		<table>
+			<tr>
+				<td>The Question:</td>
+				<td>
+					<h:inputTextarea value="#{qusBean.content}" required="true"></h:inputTextarea>
+				</td>
+			</tr>
+			<tr>
+				<td>A Option:</td>
+				<td>
+					<h:inputTextarea value="#{qusBean.aans}" required="true"></h:inputTextarea>
+				</td>
+			</tr>
+			<tr>
+				<td>B Option:</td>
+				<td>
+					<h:inputTextarea value="#{qusBean.bans}" required="true"></h:inputTextarea>
+				</td>
+			</tr>
+			<tr>
+				<td>C Option:</td>
+				<td>
+					<h:inputTextarea value="#{qusBean.cans}" required="true"></h:inputTextarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Answer:</td>
+				<td><!-- tans获取到的是itemValue 存储到属性值里 -->
+					<h:selectOneRadio value="#{qusBean.tans}" required="true">
+					<f:selectItem itemValue="A" itemLabel="A"/>
+					<f:selectItem itemValue="B" itemLabel="B"/>
+					<f:selectItem itemValue="C" itemLabel="C"/>
+					</h:selectOneRadio>
+				</td>
+			</tr>
+			<tr>
+				<td>Subject:</td>
+				<td>
+					<h:inputTextarea value="#{qusBean.subject}" required="true"
+					 requiredMessage="Subject is required"></h:inputTextarea>
+				</td>
+			</tr>
+		</table>
+	<h:commandButton value="submit" action="#{qusBean.add}"></h:commandButton>
+	<h:commandButton value="return" action="../mgrPage.xhtml"></h:commandButton>
+	</h:form>
+	
+</h:body>
+</html>

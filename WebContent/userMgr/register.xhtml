@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+><!-- 这是支持jsf标签库的导入 -->
+<!-- core是核心使用标签 ，HTML是生成页面元素的 -->
+<h:head><!-- 这样就让jsf处理了 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Registration Page</title>
+</h:head>
+<h:body>
+	<h:head>Welcom to Exam System!</h:head>
+	<h:form>
+		<table>
+			<tr>
+				<td>User name:</td>
+				<td>
+					<h:inputText value="#{userBean.name}" id="name"></h:inputText>
+					<h:message for="name" style="color:red"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td>
+					<h:inputText value="#{userBean.password}" id="password">
+					<f:validator validatorId="jsfValidate.PWValidator"/>
+					</h:inputText>
+					<!-- EL读取属性是通过get方法来的 -->
+					<h:message for="password" style="color:red"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td>
+					<h:inputText value="#{userBean.age}" id="age">
+					<f:validator validatorId="jsfValidate.AgeValidator"></f:validator>
+					</h:inputText>
+					<h:message for="age" style="color:red"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>Sex:</td>
+				<td>
+<!-- 					<h:inputText value="#{userBean.sex}" id="sex"></h:inputText> -->
+<!-- 					<h:message for="sex" style="color:red"></h:message> -->
+				<h:selectOneRadio value="#{userBean.sex}">
+					<f:selectItem itemValue="M" itemLabel="Male"/>
+					<f:selectItem itemValue="F" itemLabel="Famele"/>
+				</h:selectOneRadio>
+				</td>
+			</tr>
+			<tr>
+				<td>Security Question: What's your favorite music?</td>
+			</tr>
+			<tr>
+				<td>Your answer:</td>
+				<td>
+					<h:inputText value="#{userBean.answer}"></h:inputText>
+				</td>
+			</tr>
+		</table>
+		<h:commandButton value="submit" action="#{userBean.addUser}"></h:commandButton>
+		<h:commandButton value="login" action="login.xhtml"></h:commandButton>
+	</h:form>
+
+</h:body>
+</html>

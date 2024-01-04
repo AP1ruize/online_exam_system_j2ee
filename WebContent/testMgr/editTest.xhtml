@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:f="http://java.sun.com/jsf/core"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Edit the test</title>
+</head>
+<h:body>
+	<h:form>
+		<table>
+			<tr>
+				<td>Test Name</td>
+				<td> <!-- 在发生事件后立即提交表单， -->
+				<h:inputText value="#{testBean.name}"></h:inputText>
+			</td>
+			</tr>
+			<tr>
+				<td>Introduction</td>
+				<td><h:inputText value="#{testBean.intro}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Subject</td>
+				<td>
+					<h:selectOneMenu value="#{testBean.subject}" onchange="submit()"  valueChangeListener="#{testBean.queryPp}">
+						<f:selectItems value="#{testBean.itemSub}"/>
+					</h:selectOneMenu>
+				</td>
+				<td><h:commandButton value="All subject" action="#{testBean.queryAllSub}"></h:commandButton> </td>
+			</tr>
+			<tr>
+				<td>Paper</td>
+				<td>
+					<h:selectOneMenu value="#{testBean.paperid}">
+						<f:selectItems value="#{testBean.itemPp}"/>
+					</h:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td>Deadline(eg.20180930)</td>
+				<td><h:inputText value="#{testBean.deadline}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><h:commandButton value="save" action="#{testBean.saveEdit}"></h:commandButton></td>
+				<td><h:commandButton value="cancle" action="testMgr.xhtml"></h:commandButton></td>
+			</tr>
+	</table>
+	
+	</h:form>
+	
+</h:body>
+</html>
